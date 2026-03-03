@@ -4,6 +4,7 @@ import { FileSearch, Sparkles, FileText } from 'lucide-react';
 import Cursor from './components/Cursor';
 import Analyzer from './components/Analyzer';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 function App() {
   const [extractedData, setExtractedData] = useState(null);
@@ -18,13 +19,13 @@ function App() {
   return (
     <div className="app-container" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', position: 'relative' }}>
       <Cursor />
-      
+
       {/* Decorative Background Elements */}
       <div style={{ position: 'fixed', top: '10%', left: '5%', width: '400px', height: '400px', background: 'radial-gradient(circle, rgba(249, 115, 22, 0.08) 0%, transparent 70%)', pointerEvents: 'none', zIndex: -1 }}></div>
       <div style={{ position: 'fixed', bottom: '10%', right: '5%', width: '600px', height: '600px', background: 'radial-gradient(circle, rgba(249, 115, 22, 0.05) 0%, transparent 70%)', pointerEvents: 'none', zIndex: -1 }}></div>
 
       <Navbar />
-      
+
       <main style={{ flex: 1, padding: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
         <motion.div
           variants={pageVariants}
@@ -36,10 +37,8 @@ function App() {
           <Analyzer onDataExtracted={setExtractedData} />
         </motion.div>
       </main>
-      
-      <footer style={{ padding: '3rem', textAlign: 'center', color: 'var(--text-secondary)', borderTop: '1px solid var(--glass-border)', background: 'rgba(0,0,0,0.2)' }}>
-         <p style={{ fontSize: '0.9rem' }}>Powered by Puter.js AI & Advanced Resume Analysis Engine</p>
-      </footer>
+
+      <Footer />
     </div>
   );
 }
